@@ -2,29 +2,33 @@ import React from 'react'
 import { StyleSheet, Text, View, ImageBackground } from 'react-native'
 import StyledButton from './StyledButton'
 
-const CarItem = () => {
+const CarItem = (props) => {
+    const { name, tagline, image, taglineCTA } = props
     return (
         <View style={styles.carContainer}>
-            <ImageBackground source={require('../assets/images/ModelX.jpeg')} style={styles.image} />
+            <ImageBackground source={image} style={styles.image} />
 
             <View style={styles.titles}>
-                <Text style={styles.title}>Model S</Text>
-                <Text style={styles.subtitle} sub>Starting at $69,420</Text>
+                <Text style={styles.title}>{name}</Text>
+                <Text style={styles.subtitle}>{tagline}<Text style={styles.taglineCTA}> {taglineCTA}</Text></Text>
             </View>
 
-            <StyledButton
-                type="primary"
-                content={"Custom Order"}
-                onPress={() => {
-                    console.warn("Custom Order was pressed");
-                }}
-            />
 
-            <StyledButton type="secondary"
-                content={"Existing Inventory"}
-                onPress={() => {
-                    console.warn("Existing Inventory was pressed");
-                }} />
+            <View style={styles.btn}>
+                <StyledButton
+                    type="primary"
+                    content={"Custom Order"}
+                    onPress={() => {
+                        console.warn("Custom Order was pressed");
+                    }}
+                />
+
+                <StyledButton type="secondary"
+                    content={"Existing Inventory"}
+                    onPress={() => {
+                        console.warn("Existing Inventory was pressed");
+                    }} />
+            </View>
         </View>
     )
 }
@@ -54,5 +58,12 @@ const styles = StyleSheet.create({
         height: '100%',
         resizeMode: 'cover',
         position: 'absolute'
+    }, btn: {
+        position: 'absolute',
+        bottom: 50,
+        width: '100%'
+    },
+    taglineCTA: {
+        textDecorationLine: 'underline'
     }
 })
