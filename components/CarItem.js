@@ -1,11 +1,11 @@
 import React from 'react'
-import { StyleSheet, Text, View, ImageBackground } from 'react-native'
+import { StyleSheet, Text, View, ImageBackground, Dimensions, } from 'react-native'
 import StyledButton from './StyledButton'
 
 const CarItem = (props) => {
-    const { name, tagline, image, taglineCTA } = props
+    const { name, tagline, image, taglineCTA } = props.car
     return (
-        <View style={styles.carContainer}>
+        <View style={styles.Container}>
             <ImageBackground source={image} style={styles.image} />
 
             <View style={styles.titles}>
@@ -36,9 +36,10 @@ const CarItem = (props) => {
 export default CarItem
 
 const styles = StyleSheet.create({
-    carContainer: {
+    Container: {
         width: '100%',
-        height: '100%'
+        // height: '100%'
+        height: Dimensions.get('window').height,
     },
     titles: {
         marginTop: '30%',

@@ -1,19 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, ImageBackground } from 'react-native';
-import CarItem from './components/CarItem';
+import { StyleSheet, Text, View, ImageBackground, Image } from 'react-native';
+import CarList from './components/CarList/CarList';
+import Header from './components/Header';
+
+
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <CarItem name={'Modal S'} tagline={'Order Online for'}
-        taglineCTA={'Touchline Delivery'}
-        image={require('./assets/images/ModelX.jpeg')} />
-
-      <StatusBar style="auto" />
+      <Header />
+      <CarList />
     </View>
   );
 }
-// {} Starting at $69,420
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -21,5 +20,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+
 
 });
