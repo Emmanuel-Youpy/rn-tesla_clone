@@ -1,8 +1,19 @@
 import React from 'react'
 import { StyleSheet, Text, View, ImageBackground, Dimensions, } from 'react-native'
 import StyledButton from './StyledButton'
+import { useNavigation } from '@react-navigation/native';
 
-const CarItem = (props) => {
+
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+
+
+
+
+const CarItem = (props, ) => {
+    const navigation = useNavigation();
+
     const { name, tagline, image, taglineCTA } = props.car
     return (
         <View style={styles.Container}>
@@ -18,12 +29,14 @@ const CarItem = (props) => {
                 <StyledButton
                     type="primary"
                     content={"Custom Order"}
-                    onPress={() => {
-                        console.warn("Custom Order was pressed");
-                    }}
+                    // onPress={() => {
+                    //     console.warn("Custom Order was pressed");
+                    // }} 
+                    onPress={() => navigation.navigate("Model")}
                 />
 
-                <StyledButton type="secondary"
+
+                < StyledButton type="secondary"
                     content={"Existing Inventory"}
                     onPress={() => {
                         console.warn("Existing Inventory was pressed");
@@ -38,7 +51,6 @@ export default CarItem
 const styles = StyleSheet.create({
     Container: {
         width: '100%',
-        // height: '100%'
         height: Dimensions.get('window').height,
     },
     titles: {
