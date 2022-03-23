@@ -6,6 +6,7 @@ import { useNavigation } from '@react-navigation/native';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Header from './Header';
 
 
 
@@ -17,6 +18,7 @@ const CarItem = (props, ) => {
     const { name, tagline, image, taglineCTA } = props.car
     return (
         <View style={styles.Container}>
+            <Header />
             <ImageBackground source={image} style={styles.image} />
 
             <View style={styles.titles}>

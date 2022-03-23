@@ -1,12 +1,28 @@
 import React from 'react'
 import { StyleSheet, Text, View, Image } from 'react-native'
+// import { createDrawerNavigator } from '@react-navigation/drawer';
+
+
 
 const Header = () => {
+    // const Drawer = createDrawerNavigator();
+
+    // function MyDrawer() {
+    //   return (
+    //     <Drawer.Navigator>
+    //       <Drawer.Screen name="Feed" component={Feed} />
+    //       <Drawer.Screen name="Article" component={Article} />
+    //     </Drawer.Navigator>
+    //   );
+    // }
     return (
 
         <View style={styles.container}>
             <Image style={styles.logo} source={require('../assets/images/logo.png')} />
-            <Image style={styles.menu} source={require('../assets/images/menu.png')} />
+            {/* <Image style={styles.menu} source={require('../assets/images/menu.png')} /> */}
+            <View style={{ backgroundColor: 'lightgray', padding: 8, borderRadius: 10 }}>
+                <Text > Menu</Text>
+            </View>
         </View>
     )
 }
